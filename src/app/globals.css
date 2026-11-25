@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light only;
+  --bg-main: #FAF9F6;
+  --bg-card: #FFFFFF;
+  --bg-secondary: #F4F2EC;
+  --ink-primary: #292B27;
+  --ink-secondary: #77786F;
+  --border-warm: #E8E6DF;
+  --accent-olive: #68765B;
+  --accent-sage: #A5AF94;
+}
+
+html,
+body {
+  background-color: #FAF9F6;
+  color: #292B27;
+  min-height: 100%;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Force light theme inputs & scrollbars regardless of OS preference */
+input,
+select,
+textarea,
+button {
+  color-scheme: light;
+}
+
+@layer components {
+  .retail-card {
+    @apply bg-white border border-border-warm rounded-xl shadow-[0_1px_2px_rgba(41,43,39,0.04)];
+  }
+
+  .retail-input {
+    @apply w-full rounded-lg border border-border-warm bg-white px-3.5 py-2.5 text-sm text-ink-primary placeholder:text-ink-muted focus:border-accent-olive focus:outline-none focus:ring-2 focus:ring-accent-olive/15 transition-colors;
+  }
+
+  .retail-label {
+    @apply block text-xs font-medium text-ink-secondary mb-1.5;
+  }
+
+  .retail-btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg bg-accent-olive px-4 py-2.5 text-sm font-medium text-white hover:bg-accent-olive-hover disabled:opacity-50 disabled:cursor-not-allowed transition-colors;
+  }
+
+  .retail-btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg border border-border-warm bg-white px-4 py-2.5 text-sm font-medium text-ink-primary hover:bg-bg-secondary disabled:opacity-50 disabled:cursor-not-allowed transition-colors;
+  }
+
+  .retail-btn-danger {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg border border-status-danger/30 bg-status-danger-bg px-4 py-2.5 text-sm font-medium text-status-danger hover:bg-status-danger/10 disabled:opacity-50 transition-colors;
+  }
+}
